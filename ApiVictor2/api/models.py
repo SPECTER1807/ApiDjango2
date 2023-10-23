@@ -1,6 +1,16 @@
 from django.db import models
 
 # Create your models here.
+class Registro(models.Model):
+    idRegistro = models.IntegerField(primary_key=True, db_column='idRegistro')
+    nombre = models.CharField(max_length=100, db_column='nombre')
+    apellido = models.CharField(max_length=100, db_column='apellido')
+    correo = models.EmailField(db_column='correo')
+    password = models.CharField(max_length=100, db_column='password')
+    class Meta:
+        db_table='Usuarios'
+
+# Create your models here.
 
 class TipoHabitacion(models.Model):
     Id_TipoHabitacion = models.AutoField(primary_key=True)
